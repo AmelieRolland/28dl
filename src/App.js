@@ -3,6 +3,7 @@ import Calendar from "react-calendar";
 import "react-calendar/dist/Calendar.css";
 import dayjs from "dayjs";
 import "./App.css";
+import "./output.css";
 
 function App() {
   const [startDate, setStartDate] = useState("");
@@ -87,9 +88,10 @@ function App() {
 
   return (
     <div className="App">
-      <h1>28 Days Later</h1>
+      <h1 className="text-3xl font-bold underline">28 Days Later</h1>
+
       <label>
-        Last time, day one was: <br></br>
+        Enter the first day of your last period: <br></br>
         <br></br>
         <input
           type="date"
