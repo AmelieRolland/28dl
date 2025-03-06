@@ -24,6 +24,7 @@ function App() {
     for (let i = 0; i < 7; i++) {
       const nextPeriodStart = start.add(i * cycleLength, "day");
 
+      // In nextDates array, I add :
       // Period days
       for (let j = 0; j < periodDays; j++) {
         nextDates.push({
