@@ -3,7 +3,6 @@ import Calendar from "react-calendar";
 import "react-calendar/dist/Calendar.css";
 import dayjs from "dayjs";
 import "./App.css";
-import "./output.css";
 
 function App() {
   const [startDate, setStartDate] = useState("");
@@ -88,32 +87,49 @@ function App() {
   };
 
   return (
-    <div className="w-full h-screen flex justify-center items-center mx-auto bg-pink-500 text-white">
-      <div className="mx-auto w-full">
-        <h1 className="text-3xl font-bold underline text-white mx-auto text-center">
-          28 Days Later
+    <div className="min-h-screen bg-pink-300  p-4">
+      <div className="mx-auto w-full text-white">
+        <h1 className="pt-22 pb-18 text-6xl text-red-600 mx-auto text-center">
+          🩸💗28 Days Later💗🩸
         </h1>
 
-        <label className="mt-4 block mx-auto">
+        <label className="text-lg block mx-auto text-center">
           Enter the first day of your last period:
         </label>
 
-        <div className="flex items-center justify-center gap-4 mt-2 w-full">
+        <div className="flex flex-row justify-center pb-16 items-center gap-4 mt-2">
           <input
             type="date"
             value={startDate}
             onChange={(e) => setStartDate(e.target.value)}
-            className="p-2 border rounded mx-auto"
+            className="p-2 border rounded"
           />
 
           <button
-            className="px-4 py-2 bg-blue-500 text-white rounded"
+            className="px-4 py-2 bg-red-400 text-white rounded"
             onClick={calculateCycles}
           >
             Go
           </button>
         </div>
       </div>
+
+      {cycleDates.length > 0 && (
+        <div className="calendar-container flex justify-center mt-4">
+          {[...Array(4)].map((_, i) => (
+            <div key={i} className="calendar-wrapper">
+              <Calendar
+                tileClassName={tileClassName}
+                tileContent={tileContent}
+                view="month"
+                activeStartDate={
+                  new Date(dayjs().add(i, "month").startOf("month"))
+                }
+              />
+            </div>
+          ))}
+        </div>
+      )}
     </div>
   );
 }
