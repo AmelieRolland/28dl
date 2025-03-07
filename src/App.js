@@ -88,9 +88,9 @@ function App() {
   };
 
   return (
-    <div className="w-full h-screen flex justify-center items-center mx-auto">
+    <div className="w-full h-screen flex justify-center items-center mx-auto bg-pink-500 text-white">
       <div className="mx-auto w-full">
-        <h1 className="text-3xl font-bold underline mx-auto text-center">
+        <h1 className="text-3xl font-bold underline text-white mx-auto text-center">
           28 Days Later
         </h1>
 
