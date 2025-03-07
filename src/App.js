@@ -117,7 +117,7 @@ function App() {
   };
 
   return (
-    <div className="min-h-screen bg-pink-300 p-4">
+    <div className=" bg-pink-300 p-4">
       <div className="mx-auto w-full text-white">
         <h1 className="pt-22 pb-18 text-6xl text-red-600 mx-auto text-center">
           🩸💗28 Days Later💗🩸
