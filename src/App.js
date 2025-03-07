@@ -35,10 +35,8 @@ function App() {
           date: nextPeriodStart.add(j, "day").format("YYYY-MM-DD"),
           type: "period",
         });
-        if (i === 0 && j < periodDays) {
-          setCycleAdvice(
-            "You are in the first period of your cycle. You will be able to see the SPM period on the calendar."
-          );
+        if (i === 0 && j === 0) {
+          setCycleAdvice("Time to rest 🩸 ");
         }
       }
 
@@ -48,6 +46,11 @@ function App() {
           date: nextPeriodStart.subtract(j, "day").format("YYYY-MM-DD"),
           type: "spm",
         });
+        if (i === 0 && j === 0) {
+          setCycleAdvice(
+            "Right in your SPM! Time to have some self-care 💗 You got this! "
+          );
+        }
       }
 
       // Ovulation day
@@ -63,12 +66,20 @@ function App() {
           date: ovulationDate.subtract(j, "day").format("YYYY-MM-DD"),
           type: "high",
         });
+        if (i === 0 && j === periodDays) {
+          adviceText =
+            "Best time of the month! time to dare and to be fantastic 💗";
+        }
       }
       for (let j = 1; j <= highPhaseAfter; j++) {
         nextDates.push({
           date: ovulationDate.add(j, "day").format("YYYY-MM-DD"),
           type: "high",
         });
+        if (i === 0 && ovulationDay === 14) {
+          adviceText =
+            "✨ You're on fire ! ✨ Time to get your work done and to be proud 💗";
+        }
       }
     }
 
