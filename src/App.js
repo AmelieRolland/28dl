@@ -7,6 +7,7 @@ import "./App.css";
 function App() {
   const [startDate, setStartDate] = useState("");
   const [cycleDates, setCycleDates] = useState([]);
+  const [nextPeriodStart, setNextPeriodStart] = useState("");
 
   const cycleLength = 28;
   const periodDays = 5;
@@ -19,6 +20,9 @@ function App() {
     if (!startDate) return;
     const start = dayjs(startDate);
     const nextDates = [];
+
+    const nextCycleStart = start.add(cycleLength, "day");
+    setNextPeriodStart(nextCycleStart.format("YYYY-MM-DD"));
 
     for (let i = 0; i < 7; i++) {
       const nextPeriodStart = start.add(i * cycleLength, "day");
@@ -115,19 +119,28 @@ function App() {
       </div>
 
       {cycleDates.length > 0 && (
-        <div className="calendar-container flex justify-center mt-4">
-          {[...Array(4)].map((_, i) => (
-            <div key={i} className="calendar-wrapper">
-              <Calendar
-                tileClassName={tileClassName}
-                tileContent={tileContent}
-                view="month"
-                activeStartDate={
-                  new Date(dayjs().add(i, "month").startOf("month"))
-                }
-              />
-            </div>
-          ))}
+        <div className="calendar-container flex flex-col justify-center mt-4">
+          <p className="text-center text-lg text-white">
+            Your next period will start on: {nextPeriodStart}
+          </p>
+          <div className="flex flex-row justify-center flex-wrap gap-4 mt-2">
+            {[...Array(4)].map((_, i) => (
+              <div key={i} className="calendar-wrapper">
+                <Calendar
+                  tileClassName={tileClassName}
+                  tileContent={tileContent}
+                  view="month"
+                  activeStartDate={
+                    new Date(
+                      dayjs()
+                        .add(i + 1, "month")
+                        .startOf("month")
+                    )
+                  }
+                />
+              </div>
+            ))}
+          </div>
         </div>
       )}
     </div>
