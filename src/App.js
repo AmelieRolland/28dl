@@ -88,36 +88,32 @@ function App() {
   };
 
   return (
-    <div className="App">
-      <h1 className="text-3xl font-bold underline">28 Days Later</h1>
+    <div className="w-full h-screen flex justify-center items-center mx-auto">
+      <div className="mx-auto w-full">
+        <h1 className="text-3xl font-bold underline mx-auto text-center">
+          28 Days Later
+        </h1>
 
-      <label>
-        Enter the first day of your last period: <br></br>
-        <br></br>
-        <input
-          type="date"
-          value={startDate}
-          onChange={(e) => setStartDate(e.target.value)}
-        />
-      </label>
-      <button onClick={calculateCycles}>Go</button>
+        <label className="mt-4 block mx-auto">
+          Enter the first day of your last period:
+        </label>
 
-      {cycleDates.length > 0 && (
-        <div className="calendar-container">
-          {[...Array(4)].map((_, i) => (
-            <div key={i} className="calendar-wrapper">
-              <Calendar
-                tileClassName={tileClassName}
-                tileContent={tileContent}
-                view="month"
-                activeStartDate={
-                  new Date(dayjs().add(i, "month").startOf("month"))
-                }
-              />
-            </div>
-          ))}
+        <div className="flex items-center justify-center gap-4 mt-2 w-full">
+          <input
+            type="date"
+            value={startDate}
+            onChange={(e) => setStartDate(e.target.value)}
+            className="p-2 border rounded mx-auto"
+          />
+
+          <button
+            className="px-4 py-2 bg-blue-500 text-white rounded"
+            onClick={calculateCycles}
+          >
+            Go
+          </button>
         </div>
-      )}
+      </div>
     </div>
   );
 }
