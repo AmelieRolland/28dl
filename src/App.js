@@ -8,6 +8,7 @@ function App() {
   const [startDate, setStartDate] = useState("");
   const [cycleDates, setCycleDates] = useState([]);
   const [nextPeriodStart, setNextPeriodStart] = useState("");
+  const [cycleAdvice, setCycleAdvice] = useState("");
 
   const cycleLength = 28;
   const periodDays = 5;
@@ -34,6 +35,11 @@ function App() {
           date: nextPeriodStart.add(j, "day").format("YYYY-MM-DD"),
           type: "period",
         });
+        if (i === 0 && j < periodDays) {
+          setCycleAdvice(
+            "You are in the first period of your cycle. You will be able to see the SPM period on the calendar."
+          );
+        }
       }
 
       // SPM period
@@ -123,6 +129,7 @@ function App() {
           <p className="text-center text-lg text-white">
             Your next period will start on: {nextPeriodStart}
           </p>
+          <p>{cycleAdvice}</p>
           <div className="flex flex-row justify-center flex-wrap gap-4 mt-2">
             {[...Array(4)].map((_, i) => (
               <div key={i} className="calendar-wrapper">
