@@ -132,7 +132,7 @@ function App() {
             type="date"
             value={startDate}
             onChange={(e) => setStartDate(e.target.value)}
-            className="p-2 border rounded"
+            className="p-2 border border-gray-500 bg-white text-black rounded"
           />
 
           <button
