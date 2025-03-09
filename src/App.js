@@ -131,6 +131,7 @@ function App() {
           <input
             type="date"
             value={startDate}
+            placeholder="Select a date"
             onChange={(e) => setStartDate(e.target.value)}
             className="p-2 border border-gray-500 bg-white !important text-black rounded"
           />
