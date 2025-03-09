@@ -5,7 +5,7 @@ import dayjs from "dayjs";
 import "./App.css";
 
 function App() {
-  const [startDate, setStartDate] = useState("");
+  const [startDate, setStartDate] = useState(dayjs().format("YYYY-MM-DD"));
   const [cycleDates, setCycleDates] = useState([]);
   const [nextPeriodStart, setNextPeriodStart] = useState("");
   const [selectedDate, setSelectedDate] = useState("");
@@ -131,7 +131,6 @@ function App() {
           <input
             type="date"
             value={startDate}
-            defaultValue="2024-03-10"
             onChange={(e) => setStartDate(e.target.value)}
             className="p-2 border border-gray-500 bg-white !important text-black rounded"
           />
