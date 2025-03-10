@@ -24,7 +24,7 @@ function App() {
     const nextDates = [];
 
     const nextCycleStart = start.add(cycleLength, "day");
-    setNextPeriodStart(nextCycleStart.format("YYYY-MM-DD"));
+    setNextPeriodStart(nextCycleStart.format("DD MMMM YYYY"));
 
     for (let i = 0; i < 7; i++) {
       const nextPeriodStart = start.add(i * cycleLength, "day");
