@@ -152,7 +152,7 @@ function App() {
             Your next period will start on: {nextPeriodStart}
           </p>
           <div className="flex flex-row justify-center flex-wrap gap-4 mt-2">
-            {[...Array(4)].map((_, i) => (
+            {[...Array(6)].map((_, i) => (
               <div key={i} className="calendar-wrapper">
                 <Calendar
                   tileClassName={tileClassName}
