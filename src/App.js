@@ -127,7 +127,7 @@ function App() {
           Enter the first day of your last period:
         </label>
 
-        <div className="flex flex-row justify-center pb-4 items-center gap-4 mt-2">
+        <div className="flex flex-row justify-center pb-8 items-center gap-4 mt-2">
           <input
             type="date"
             value={startDate}
