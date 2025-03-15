@@ -45,6 +45,11 @@
   flex-direction: column;
   align-items: center;
 }
-h1 {
+.react-calendar {
+  border: 4px solid #ffffff;
+  border-radius: 10px;
+  box-shadow: 4px 4px 0px #fc67c3;
+}
+.nextperiod {
   font-family: "Nosifer", sans-serif;
 }

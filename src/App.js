@@ -34,7 +34,8 @@ function App() {
         nextDates.push({
           date: periodDate.format("YYYY-MM-DD"),
           type: "period",
-          advice: "Time to rest 🩸", // Conseil pour la période de règles
+          advice:
+            "Time to rest 🩸 Take it easy, rest up and recharge your energy 🩸 You've earned it!",
         });
       }
 
@@ -45,7 +46,7 @@ function App() {
           date: spmDate.format("YYYY-MM-DD"),
           type: "spm",
           advice:
-            "Right in your SPM! Time to have some self-care 💗 You got this!",
+            "Right in your SPM! Time to have some self-care 💗 You got this, queen!",
         });
       }
 
@@ -86,7 +87,7 @@ function App() {
     const cycleDay = cycleDates.find((d) => d.date === today);
     return cycleDay
       ? cycleDay.advice
-      : "✨ Normal, just be normal, chill out everything is fine ✨";
+      : "✨ Normal, just be normal, enjoy the ride and chill out: everything is fine ✨";
   };
 
   useEffect(() => {
@@ -150,9 +151,12 @@ function App() {
             <h2 className="text-center text-2xl mt-4"> Today is :</h2>
             <p className="text-center text-lg mt-4">{cycleAdvice}</p>
           </div>
-          <p className="text-center text-lg text-white">
-            Your next period will start on: {nextPeriodStart}
-          </p>
+          <div className="relative flex flex-col justify-center border-2 border-red-600 rounded-lg p-6 max-w-full mx-auto inline-flex">
+            <p className="text-center text-lg text-red-600">
+              Your next period will start on:
+              <span className="nextperiod text-xl"> {nextPeriodStart}</span>
+            </p>
+          </div>
           <div className="flex flex-row justify-center flex-wrap gap-4 mt-2">
             {[...Array(6)].map((_, i) => (
               <div key={i} className="calendar-wrapper">
