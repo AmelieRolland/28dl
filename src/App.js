@@ -131,7 +131,7 @@ function App() {
           value={periodDays}
           onChange={(e) => setPeriodDays(e.target.value)}
           min="0"
-          max="30"
+          max="10"
           step="1"
           className="p-2 border border-gray-500 bg-white !important text-black block mx-auto rounded"
         />
