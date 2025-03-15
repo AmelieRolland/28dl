@@ -120,7 +120,7 @@ function App() {
   return (
     <div className="p-4">
       <div className="mx-auto w-full text-white pt-16">
-        <h1 className="pb-16 text-4xl md:text-6xl text-red-600 mx-auto text-center">
+        <h1 className="pb-16 text-5xl md:text-6xl text-red-600 mx-auto text-center">
           🩸💗28 Days Later💗🩸
         </h1>
 
