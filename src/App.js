@@ -55,7 +55,7 @@ function App() {
       nextDates.push({
         date: ovulationDate.format("YYYY-MM-DD"),
         type: "ovulation",
-        advice: "🤰 Ovulation Day! Time to dare and to be fantastic 💗",
+        advice: "🤰 Ovulation Day! Time to dare and to be fantastic 💗 Yeiii!",
       });
 
       // OVULATION PERIOD
