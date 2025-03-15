@@ -146,8 +146,10 @@ function App() {
 
       {cycleDates.length > 0 && (
         <div className="calendar-container flex flex-col justify-center mt-4">
-          <h2 className="text-center text-lg text-white mt-4"> Today is :</h2>
-          <p className="text-center text-lg text-white mt-4">{cycleAdvice}</p>
+          <div className="flex flex-col justify-center bg-white rounded-lg p-4 shadow-lg">
+            <h2 className="text-center text-lg mt-4"> Today is :</h2>
+            <p className="text-center text-lg mt-4">{cycleAdvice}</p>
+          </div>
           <p className="text-center text-lg text-white">
             Your next period will start on: {nextPeriodStart}
           </p>
