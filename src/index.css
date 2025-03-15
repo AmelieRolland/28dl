@@ -16,6 +16,10 @@ h1 {
   font-family: "Nosifer", sans-serif;
   color: rgb(228, 18, 18);
 }
+h2 {
+  font-family: "Nosifer", sans-serif;
+  color: #ff668b;
+}
 body,
 html {
   height: 100%;
