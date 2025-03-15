@@ -149,7 +149,7 @@ function App() {
           />
 
           <button
-            className="px-4 py-2 bg-red-400 text-white rounded"
+            className="px-4 py-2 bg-red-400 text-white rounded hover:bg-red-500"
             onClick={calculateCycles}
           >
             Go
@@ -159,12 +159,12 @@ function App() {
 
       {cycleDates.length > 0 && (
         <div className="calendar-container flex flex-col justify-center mt-4">
-          <div className="relative flex flex-col justify-center bg-white rounded-lg p-6 shadow-[8px_8px_0px_#ff668b,16px_16px_0px_#9333ea] w-4/5 md:w-1/3 max-w-md mx-auto mb-12">
+          <div className="relative flex flex-col justify-center bg-white rounded-lg p-6 shadow-[8px_8px_0px_#ff668b,16px_16px_0px_#ef4444] w-4/5 md:w-1/3 max-w-md mx-auto mb-12">
             <h2 className="text-center text-2xl mt-4"> Today is :</h2>
             <p className="text-center text-lg mt-4">{cycleAdvice}</p>
           </div>
-          <div className="relative flex flex-col justify-center border-2 border-red-600 rounded-lg p-6 max-w-full mx-auto inline-flex">
-            <p className="text-center text-lg text-red-600">
+          <div className="relative flex flex-col justify-center border-2 border-red-500 rounded-lg p-6 max-w-full mx-auto inline-flex">
+            <p className="text-center text-lg text-red-500">
               Your next period will start on:
               <span className="nextperiod text-xl"> {nextPeriodStart}</span>
             </p>
