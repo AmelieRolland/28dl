@@ -8,11 +8,10 @@ function App() {
   const [startDate, setStartDate] = useState(dayjs().format("YYYY-MM-DD"));
   const [cycleDates, setCycleDates] = useState([]);
   const [nextPeriodStart, setNextPeriodStart] = useState("");
-  const [selectedDate, setSelectedDate] = useState("");
+  const [periodDays, setPeriodDays] = useState(5);
   const [cycleAdvice, setCycleAdvice] = useState("");
 
   const cycleLength = 28;
-  const periodDays = 5;
   const spmDays = 4;
   const ovulationDay = 14;
   const highPhaseBefore = 5;
@@ -123,6 +122,19 @@ function App() {
         <h1 className="pb-16 text-5xl md:text-6xl text-red-600 mx-auto text-center">
           🩸💗28 Days Later💗🩸
         </h1>
+
+        <label className="text-lg block mx-auto text-center pb-4">
+          If you want, you can enter your period length (if not, it will be 5)
+        </label>
+        <input
+          type="number"
+          value={periodDays}
+          onChange={(e) => setPeriodDays(e.target.value)}
+          min="0"
+          max="30"
+          step="1"
+          className="p-2 border border-gray-500 bg-white !important text-black block mx-auto rounded"
+        />
 
         <label className="text-lg block mx-auto text-center pb-4">
           Enter the first day of your last period:
