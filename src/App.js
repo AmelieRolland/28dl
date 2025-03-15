@@ -118,12 +118,12 @@ function App() {
 
   return (
     <div className="p-4">
-      <div className="mx-auto w-full text-white">
-        <h1 className="pt-22 pb-18 text-6xl text-red-600 mx-auto text-center">
+      <div className="mx-auto w-full text-white pt-16">
+        <h1 className="pb-16 text-6xl text-red-600 mx-auto text-center">
           🩸💗28 Days Later💗🩸
         </h1>
 
-        <label className="text-lg block mx-auto text-center">
+        <label className="text-lg block mx-auto text-center pb-4">
           Enter the first day of your last period:
         </label>
 
@@ -146,7 +146,7 @@ function App() {
 
       {cycleDates.length > 0 && (
         <div className="calendar-container flex flex-col justify-center mt-4">
-          <div className="flex flex-col justify-center bg-white rounded-lg p-4 shadow-lg">
+          <div className="relative flex flex-col justify-center bg-white rounded-lg p-6 shadow-[8px_8px_0px_#ff668b,16px_16px_0px_#9333ea] w-4/5 md:w-1/3 max-w-md mx-auto">
             <h2 className="text-center text-lg mt-4"> Today is :</h2>
             <p className="text-center text-lg mt-4">{cycleAdvice}</p>
           </div>
