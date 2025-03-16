@@ -126,17 +126,32 @@ function App() {
         <label className="text-lg block mx-auto text-center pb-4">
           If you want, you can enter your period length (if not, it will be 5)
         </label>
-        <input
-          type="number"
-          value={periodDays}
-          onChange={(e) => setPeriodDays(e.target.value)}
-          min="0"
-          max="10"
-          step="1"
-          className="p-2 border border-gray-500 bg-white !important text-black block mx-auto rounded"
-        />
+        <div className="mx-auto w-full text-center mt-2">
+          <button
+            onClick={() => setPeriodDays((prev) => Math.max(prev - 1, 1))}
+            className="p-2 hover:bg-red-500 bg-red-400 rounded"
+          >
+            -
+          </button>
+          <input
+            type="number"
+            value={periodDays}
+            onChange={(e) =>
+              setPeriodDays(Math.max(1, Math.min(10, Number(e.target.value))))
+            }
+            className="w-16 text-center p-2 border border-gray-500 bg-white text-black rounded mx-auto no-spinner"
+            min="1"
+            max="10"
+          />
+          <button
+            onClick={() => setPeriodDays((prev) => Math.min(prev + 1, 10))}
+            className="p-2 hover:bg-red-500 bg-red-400 rounded"
+          >
+            +
+          </button>
+        </div>
 
-        <label className="text-lg block mx-auto text-center pb-4">
+        <label className="text-lg block mx-auto text-center pt-8 pb-4">
           Enter the first day of your last period:
         </label>
 
