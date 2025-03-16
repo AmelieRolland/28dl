@@ -25,7 +25,7 @@ function App() {
     const nextCycleStart = start.add(cycleLength, "day");
     setNextPeriodStart(nextCycleStart.format("DD MMMM YYYY"));
 
-    for (let i = 0; i < 7; i++) {
+    for (let i = 0; i < 12; i++) {
       const nextPeriodStart = start.add(i * cycleLength, "day");
 
       for (let j = 0; j < periodDays; j++) {
@@ -185,8 +185,13 @@ function App() {
             </p>
           </div>
           <div className="flex flex-row justify-center flex-wrap gap-4 mt-2">
-            {[...Array(6)].map((_, i) => (
-              <div key={i} className="calendar-wrapper">
+            {[...Array(8)].map((_, i) => (
+              <div
+                key={i}
+                className="calendar-wrapper flex flex-col justify-center bg-white rounded-lg p-4 
+                 shadow-[8px_8px_0px_#ff668b,16px_16px_0px_#ef4444] 
+                 w-full md:w-1/4 max-w-xs min-h-[350px] mx-auto mb-12"
+              >
                 <Calendar
                   tileClassName={tileClassName}
                   tileContent={tileContent}
